@@ -50,11 +50,10 @@
         <div class="time-box"><span id="seconds">00</span>Secs</div>
     </div>
     
-    <div class="gallery">
+   <div class="gallery">
         <img src="611349293_18134282755494638_8981008464911477342_n.jpg" onerror="this.src='https://via.placeholder.com/300?text=Photo+1'">
-        <img src="610793962_18134439010494638_7321484390601086664_n.jpg" onerror="this.src='https://via.placeholder.com/300?text=Photo+2'">
+        <img src="613211836_18134438998494638_4091372432181082051_n.jpg" onerror="this.src='https://via.placeholder.com/300?text=Photo+2'">
         <img src="591166694_18131588467494638_1297433211467667895_n.jpg" onerror="this.src='https://via.placeholder.com/300?text=Photo+3'">
-        <img src="584007425_18130170328494638_8132999309418834720_n.jpg" onerror="this.src='https://via.placeholder.com/300?text=Photo+4'">
     </div>
 
     <button class="heart-btn" onclick="openSurprise()">❤️</button>
@@ -90,11 +89,11 @@
             document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
-        // 2. Floating Background Photos (FIXED: Added commas)
+// 2. Floating Background Photos (Only 3 images now)
         const photoList = [
-            '584007425_18130170328494638_8132999309418834720_n.jpg',
-            '591166694_18131588467494638_1297433211467667895_n.jpg',
             '611349293_18134282755494638_8981008464911477342_n.jpg',
+            '613211836_18134438998494638_4091372432181082051_n.jpg',
+            '591166694_18131588467494638_1297433211467667895_n.jpg'
         ];
 
         function createFloater() {
