@@ -73,23 +73,29 @@
     </audio>
 
     <script>
-        // 1. Countdown Logic (Set to Jan 15, 2026)
+        // 1. Countdown Logic (Set to Jan 24, 2026)
         const targetDate = new Date("January 24, 2026 00:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
+            
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<h2>HAPPY BIRTHDAY LAIBA! 🥳</h2>";
+                return;
+            }
+
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
-        // 2. Floating Background Photos
+        // 2. Floating Background Photos (FIXED: Added commas)
         const photoList = [
-            '584007425_18130170328494638_8132999309418834720_n.jpg'
-            '591166694_18131588467494638_1297433211467667895_n.jpg'
-            '610793962_18134439010494638_7321484390601086664_n.jpg'
-			'611349293_18134282755494638_8981008464911477342_n.jpg'
+            '584007425_18130170328494638_8132999309418834720_n.jpg',
+            '591166694_18131588467494638_1297433211467667895_n.jpg',
+            '610793962_18134439010494638_7321484390601086664_n.jpg',
+            '611349293_18134282755494638_8981008464911477342_n.jpg'
         ];
 
         function createFloater() {
@@ -129,3 +135,7 @@
                 setTimeout(() => { c.style.transform = `translateY(110vh)`; }, 10);
                 setTimeout(() => c.remove(), 3000);
             }
+        }
+    </script>
+</body>
+</html>
